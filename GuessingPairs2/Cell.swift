@@ -33,10 +33,7 @@ class Cell {
     self.frontImage = frontImage
     self.backImage = backImage
     self.size = size
-    
-    func master(){
-      print("mster branch")
-    }
+
   }
 
 }
