@@ -12,7 +12,7 @@
 		0427793E21B72E5C00563B81 /* PairsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427793D21B72E5C00563B81 /* PairsButton.swift */; };
 		0427794021B72EEC00563B81 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427793F21B72EEC00563B81 /* Matrix.swift */; };
 		0427794321B72FD400563B81 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427794221B72FD400563B81 /* TypeAlias.swift */; };
-		0427794821B730C900563B81 /* GameBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427794721B730C900563B81 /* GameBoardViewModel.swift */; };
+		0427794821B730C900563B81 /* Constatns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427794721B730C900563B81 /* Constatns.swift */; };
 		046076B621ADF576009BC0E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046076B521ADF576009BC0E9 /* AppDelegate.swift */; };
 		046076B821ADF576009BC0E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046076B721ADF576009BC0E9 /* ViewController.swift */; };
 		046076BB21ADF576009BC0E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046076B921ADF576009BC0E9 /* Main.storyboard */; };
@@ -26,7 +26,7 @@
 		0427793D21B72E5C00563B81 /* PairsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsButton.swift; sourceTree = "<group>"; };
 		0427793F21B72EEC00563B81 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		0427794221B72FD400563B81 /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
-		0427794721B730C900563B81 /* GameBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModel.swift; sourceTree = "<group>"; };
+		0427794721B730C900563B81 /* Constatns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatns.swift; sourceTree = "<group>"; };
 		046076B221ADF575009BC0E9 /* GuessingPairs2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessingPairs2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046076B521ADF576009BC0E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046076B721ADF576009BC0E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,14 +65,6 @@
 			path = Struct;
 			sourceTree = "<group>";
 		};
-		0427794421B7301E00563B81 /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				0427794221B72FD400563B81 /* TypeAlias.swift */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
 		0427794521B7304600563B81 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,12 +81,13 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		0427794921B730D100563B81 /* ViewModel */ = {
+		042CB34521B8559F00602D71 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0427794721B730C900563B81 /* GameBoardViewModel.swift */,
+				0427794721B730C900563B81 /* Constatns.swift */,
+				0427794221B72FD400563B81 /* TypeAlias.swift */,
 			);
-			path = ViewModel;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		046076A921ADF575009BC0E9 = {
@@ -118,9 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				046076B521ADF576009BC0E9 /* AppDelegate.swift */,
-				0427794921B730D100563B81 /* ViewModel */,
+				042CB34521B8559F00602D71 /* Helpers */,
 				0427794521B7304600563B81 /* ViewController */,
-				0427794421B7301E00563B81 /* Types */,
 				0427793C21B72BB700563B81 /* View */,
 				0427794121B72EF200563B81 /* Struct */,
 				0427794621B7305400563B81 /* Storyboards */,
@@ -207,7 +199,7 @@
 				0427794021B72EEC00563B81 /* Matrix.swift in Sources */,
 				0427793E21B72E5C00563B81 /* PairsButton.swift in Sources */,
 				046076C821ADF63D009BC0E9 /* PointSize.swift in Sources */,
-				0427794821B730C900563B81 /* GameBoardViewModel.swift in Sources */,
+				0427794821B730C900563B81 /* Constatns.swift in Sources */,
 				0427793B21B72BAD00563B81 /* GameBoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
