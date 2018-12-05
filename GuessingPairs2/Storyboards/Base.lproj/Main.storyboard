@@ -18,64 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YcW-ed-dLc">
-                                <rect key="frame" x="41.5" y="135" width="78" height="143"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="143" id="7nE-Dd-Sxf"/>
-                                    <constraint firstAttribute="width" constant="78" id="u0L-qv-E6b"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HgY-qu-54w">
-                                    <size key="itemSize" width="44" height="38"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4fZ-7z-Cni">
-                                        <rect key="frame" x="17" y="0.0" width="44" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="44" height="38"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="2uE-0g-D1F">
-                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8HE-KZ-9ZH">
-                                        <rect key="frame" x="17" y="48" width="44" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="44" height="38"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="Jxw-Fu-N3x">
-                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KL1-mY-GuU">
-                                        <rect key="frame" x="17" y="96" width="44" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="44" height="38"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="akk-ey-kyk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjQ-nX-ijn">
                                 <rect key="frame" x="39" y="20" width="83" height="27"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,7 +40,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round: 1 of 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-33-gI2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Round: 1 of 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-33-gI2">
                                 <rect key="frame" x="24.5" y="286" width="112" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="112" id="gZo-KX-vNO"/>
@@ -108,27 +50,51 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-jU-QBz">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-jU-QBz">
                                 <rect key="frame" x="53" y="325" width="55" height="30"/>
                                 <state key="normal" title="&lt;- Back"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="rPB-y0-YKh">
+                                <rect key="frame" x="58" y="130" width="44" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="fV2-eC-aJi">
+                                <rect key="frame" x="58" y="176" width="44" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="IZf-X9-h6Z">
+                                <rect key="frame" x="58" y="222" width="44" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="5rX-ok-QGc">
+                                <rect key="frame" x="570" y="130" width="44" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="mW3-3o-w6X">
+                                <rect key="frame" x="570" y="176" width="44" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="PT7-n7-tb0">
+                                <rect key="frame" x="570" y="222" width="44" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YcW-ed-dLc" firstAttribute="top" secondItem="GP4-CK-duP" secondAttribute="bottom" constant="23" id="5iQ-ja-3ee"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fUE-jU-QBz" secondAttribute="bottom" constant="20" id="Faw-fs-1IR"/>
-                            <constraint firstItem="Sy7-33-gI2" firstAttribute="centerX" secondItem="YcW-ed-dLc" secondAttribute="centerX" id="I5e-zy-KCY"/>
-                            <constraint firstItem="Sy7-33-gI2" firstAttribute="top" secondItem="YcW-ed-dLc" secondAttribute="bottom" constant="8" id="Ith-UR-KJI"/>
                             <constraint firstItem="fUE-jU-QBz" firstAttribute="centerX" secondItem="Sy7-33-gI2" secondAttribute="centerX" id="JCl-Fg-Ds7"/>
                             <constraint firstItem="GP4-CK-duP" firstAttribute="top" secondItem="ZjQ-nX-ijn" secondAttribute="bottom" constant="11" id="MaB-Ix-Lqo"/>
                             <constraint firstItem="ZjQ-nX-ijn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Rc7-NH-VbA"/>
-                            <constraint firstItem="YcW-ed-dLc" firstAttribute="centerX" secondItem="GP4-CK-duP" secondAttribute="centerX" id="Uf4-mP-9Ep"/>
                             <constraint firstItem="ZjQ-nX-ijn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="bQS-9U-h2Z"/>
                             <constraint firstItem="GP4-CK-duP" firstAttribute="centerX" secondItem="ZjQ-nX-ijn" secondAttribute="centerX" id="g8y-qz-HQM"/>
                             <constraint firstItem="GP4-CK-duP" firstAttribute="top" secondItem="ZjQ-nX-ijn" secondAttribute="bottom" constant="11" id="olC-ac-4Ch"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="player_1_Cups" destination="rPB-y0-YKh" collectionClass="NSMutableArray" id="Mv5-3k-FRY"/>
+                        <outletCollection property="player_2_Cups" destination="mW3-3o-w6X" collectionClass="NSMutableArray" id="HRs-a2-bHO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

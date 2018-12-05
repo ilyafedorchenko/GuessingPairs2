@@ -11,6 +11,9 @@ import UIKit
 
 
 class ViewController: UIViewController {
+ 
+  @IBOutlet var player_1_Cups: [UIImageView]!
+  @IBOutlet var player_2_Cups: [UIImageView]!
   
   var gameBoard = GameBoardView(UIColor.gray, buttonsIndent, leadingViewOffset, arrayColumnsNumber)
   var arrayOfButtons = Matrix(rows: arrayRowsNumber, columns: arrayColumnsNumber, image: imageBack)
