@@ -38,13 +38,10 @@ class ViewController: UIViewController {
         let button = arrayOfButtons[row,column]
         gameBoard.addSubview(arrayOfButtons[row,column])
         button.setupConstraints(gameBoard, buttonSize, offsetX, offsetY)
-        button.addTarget(button, action: #selector(buttonTouch), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonTouch), for: .touchUpInside)
       }
     }
-    
     arrayOfPairs.shuffle()
-    print(arrayOfPairs)
-  
   }
 }
 

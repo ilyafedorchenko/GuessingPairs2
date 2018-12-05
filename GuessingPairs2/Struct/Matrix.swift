@@ -15,13 +15,11 @@ struct Matrix {
   init(rows: Int, columns: Int, image: UIImage) {
     self.rows = rows
     self.columns = columns
-    grid = Array (repeating: PairsButton(image), count: rows * columns)
+    grid = Array (repeating: PairsButton(), count: rows * columns)
     for (i, _) in grid.enumerated() {
       let button = PairsButton(image)
       grid[i] = button
     }
-    
-    print(grid)
   }
   
   func indexIsValid (row: Int, column: Int) -> Bool {

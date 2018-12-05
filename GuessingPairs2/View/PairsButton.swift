@@ -10,15 +10,19 @@ import UIKit
 
 class PairsButton: UIButton {
 
-  init (_ image: UIImage) {
-    
+  init() {
     super.init(frame: CGRect())
+  }
+  
+  convenience init (_ image: UIImage) {
+    
+    self.init()
     
     self.setImage(image, for: .normal)
     self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.fill
     self.contentVerticalAlignment = UIControl.ContentVerticalAlignment.fill
     self.translatesAutoresizingMaskIntoConstraints = false
-//    self.addTarget(self, action: #selector(buttonTouch), for: .touchUpInside)
+
   }
   
   required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
