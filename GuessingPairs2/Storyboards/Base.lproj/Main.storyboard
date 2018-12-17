@@ -29,7 +29,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GP4-CK-duP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GP4-CK-duP">
                                 <rect key="frame" x="39" y="58" width="83" height="54"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -106,7 +106,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiS-xz-x6F">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiS-xz-x6F">
                                 <rect key="frame" x="545" y="58" width="83" height="54"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -154,6 +154,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="labelPlayer_1" destination="ZjQ-nX-ijn" id="Vpl-15-5Wg"/>
+                        <outlet property="labelPlayer_1Score" destination="GP4-CK-duP" id="HaA-a0-2Xz"/>
+                        <outlet property="labelPlayer_2" destination="bAN-6J-F0e" id="n7r-mg-AZb"/>
+                        <outlet property="labelPlayer_2Score" destination="IiS-xz-x6F" id="7x4-cl-qIm"/>
+                        <outlet property="labelRound" destination="Sy7-33-gI2" id="PRm-m3-VhE"/>
                         <outletCollection property="player_1_Cups" destination="rPB-y0-YKh" collectionClass="NSMutableArray" id="Mv5-3k-FRY"/>
                         <outletCollection property="player_2_Cups" destination="mW3-3o-w6X" collectionClass="NSMutableArray" id="HRs-a2-bHO"/>
                     </connections>

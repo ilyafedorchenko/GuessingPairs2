@@ -12,7 +12,11 @@ var arrayOfPairs = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7]
 let imageBack = UIImage(named: "Question")!
 let imagesCollection: [Int:String] = [0:"Arrow", 1:"Polygone", 2:"Roomb", 3:"Circle", 4:"Square", 5:"6_Star", 6:"Star", 7:"Triangle"]
 
-let arrayColumnsNumber = 4
-let arrayRowsNumber = 4
+let arrayColumnsNumber: Int = 4
+let arrayRowsNumber: Int = 4
 let buttonsIndent: points = 8
 let leadingViewOffset: points = 8
+
+let maxNumOfRounds: Int = 3
+
+let timerInterval: Double = 1.0
