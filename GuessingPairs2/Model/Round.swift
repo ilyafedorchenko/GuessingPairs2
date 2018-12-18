@@ -16,13 +16,15 @@ class Round {
   var currentField: UIButton? = nil
   var players: [Player]
   var labelRound: UILabel
+  var maxScoreSum: Int
   
   
-  required init(round: Int, _ players: [Player], _ labelRound: UILabel) {
+  required init(round: Int, _ players: [Player], _ labelRound: UILabel, maxScoreSum: Int) {
     
     self.currentRound = round
     self.players = players
     self.labelRound = labelRound
+    self.maxScoreSum = maxScoreSum
     
   }
   
@@ -32,25 +34,18 @@ class Round {
   func startNewRound() {
     
     if (players[0].playerScore > 0) || (players[1].playerScore > 0) {
-      // NEW Round initialisation (not FIRST)
+    // NEW Round initialisation (not FIRST)
       if players[0].playerScore > players[1].playerScore {
         //TODO: P1 won add cup
-        self.resetScores()
       } else if players[0].playerScore < players[1].playerScore {
         //TODO: P2 won add cup
-        self.resetScores()
       } else {
         //TODO: Draw add 2 cups
-        self.resetScores()
       }
-    } else {
-      // FIRST Round initialisation
-      // just reset scores
-      self.resetScores()
     }
-    
+    // geberal for any round initialisation
+    self.resetScores()
     labelRound.text = "Round: \(currentRound) of \(maxNumOfRounds)"
-    
   }
   
   // switches activePlayer
@@ -66,15 +61,20 @@ class Round {
     }
   }
   
-  // sets score to 0 for each player
+  // sets score to 0 for each player, update score labels
   func resetScores() {
-    
-    for (index, _) in players.enumerated() {
-      players[index].playerScore = 0
+    for player in players {
+      player.playerScore = 0
+      player.labelPlayerScore.text = "\(player.playerScore)"
     }
   }
   
-  
-  
-  
+  func checkEndOfRound () -> Bool {
+    let sumScores = players.reduce(0, {result, player in result + player.playerScore})
+    if sumScores < maxScoreSum {
+      return false
+    } else {
+      return true
+    }
+  }
 }

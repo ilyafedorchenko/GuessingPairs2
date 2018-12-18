@@ -21,9 +21,9 @@ class ViewController: UIViewController {
   @IBOutlet weak var labelPlayer_2Score: UILabel!
   @IBOutlet weak var labelRound: UILabel!
   
-  
   var gameBoard = GameBoardView(UIColor.gray, buttonsIndent, leadingViewOffset, arrayColumnsNumber)
-  var arrayOfButtons = Matrix(rows: arrayRowsNumber, columns: arrayColumnsNumber, image: imageBack)
+  var arrayOfButtons = Matrix(rows: arrayRowsNumber, columns: arrayColumnsNumber/*, image: imageBack*/)
+  
   var currentField: UIButton?
   var previousField: UIButton?
 
@@ -57,48 +57,45 @@ class ViewController: UIViewController {
       )
     ]
     game = Game(players, maxNumOfRounds)
-    round = Round(round: 1, players, labelRound)
+    round = Round(round: 1, players, labelRound, maxScoreSum: arrayOfPairs.count/2)
+    self.view.addSubview(gameBoard)
+    gameBoard.setupConstraints()
     
     setupGameBoard()
-    
     
   }
   
   
   @objc func buttonTouch (_ button: PairsButton) {
     //FIXME: add correct round change and cup increment
-    if !moveIsOver {
+    if !moveIsOver {                                                           // move is NOT over, open next Field
       openButton(button)
       previousField = button
       moveIsOver = true
-    } else {
+    } else {                                                                   // move is over, start checking pair
       openButton(button)
       currentField = button
       moveIsOver = false
-      if !checkPairs(currentField!, previousField!) {
+      if !checkPairs(currentField!, previousField!) {                          // pair is NOT guessed, close pair and switch player
         closeButtons(currentField!, previousField!, imageBack)
         round!.switchActivePlayer()
-      } else {
+      } else {                                                                 // pair is guessed, hide pair and disable, increase score
         closeButtons(currentField!, previousField!, nil)
         for (index,_) in players.enumerated() {
           players[index].activePlayerScorePlus()
         }
-        if true {
-          
-          //TODO: round is NOT over?
-          round!.startNewRound()
-
-        } else {
-          if game!.checkGameOver(round!.currentRound) { //TODO: games is over?
-            
-            showGameOverAlert()
-          } else {
-            // label game over
-            setupGameBoard()
+        if round!.checkEndOfRound() {                                          // round is over
+          round!.startNewRound()                                               // give a cup to the winner, reset scores
+          resetAllButtons(arrayOfButtons)
+//          deleteGameBoard()
+//          setupGameBoard()                                                     // FIXME: setup new gameboard - add reinitialisation of the board
+          // TODO: optional alert
+          if game!.checkGameOver(round!.currentRound) {                        // games is over
+            showGameOverAlert()                                                // show alert with the winner
           }
         }
       }
-    }
+    }                                                                          // active player can make new move
   }
   
   
@@ -108,14 +105,30 @@ class ViewController: UIViewController {
     let index = arrayOfPairs[i!]
     let imageName = imagesCollection[index]
     button.setImage(UIImage(named : imageName!), for: .normal)
+    button.isEnabled = false
+  }
+  
+  func deleteGameBoard(){
+    for view in gameBoard.subviews{
+      view.removeFromSuperview()
+    }
+  }
+  
+  func resetAllButtons(_ buttons: Matrix) {
+    for row in 0..<arrayRowsNumber {
+      for column in 0..<arrayColumnsNumber {
+        buttons[row,column].isEnabled = true
+        buttons[row,column].isHidden = false
+        buttons[row,column].setImage(imageBack, for: .normal)
+      }
+    }
   }
   
   func setupGameBoard() {
+    
     arrayOfPairs.shuffle()
     round!.startNewRound()
     
-    self.view.addSubview(gameBoard)
-    gameBoard.setupConstraints()
     let buttonSize = gameBoard.buttonSize
     moveIsOver = false
     
@@ -127,6 +140,7 @@ class ViewController: UIViewController {
         gameBoard.addSubview(arrayOfButtons[row,column])
         button.setupConstraints(gameBoard, buttonSize, offsetX, offsetY)
         button.addTarget(self, action: #selector(buttonTouch), for: .touchUpInside)
+        button.setImage(imageBack, for: .normal)
       }
     }
     for (index, _) in players.enumerated() {
@@ -167,7 +181,7 @@ class ViewController: UIViewController {
   //func for updating labels + debugging
 //  func updateLabels(){
 //    labelRoundOver.text=String(moveOver)                                // DEBUG----------------------
-//    //        labelTotalScore.text=String(totalScore)                           // DEBUG----------------------
+//    //        labelTotalScore.text=String(totalScore)                   // DEBUG----------------------
 //    labelNumberOfPairsRevealed.text=String(numberOfPairsRevealed)       // DEBUG----------------------
 //    labelP1Score.text=String(playerScore[0])
 //    labelP2Score.text=String(playerScore[1])
@@ -183,10 +197,12 @@ class ViewController: UIViewController {
         // do stuff X seconds later
         if let image = imageBack {
           currentField.setImage(image, for: .normal)
+          currentField.isEnabled = true
           previousField.setImage(image, for: .normal)
+          previousField.isEnabled = true
         } else {
-          currentField.imageView!.isHidden = true
-          previousField.imageView!.isHidden = true
+          currentField.isHidden = true
+          previousField.isHidden = true
         }
       }
   }

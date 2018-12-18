@@ -12,12 +12,12 @@ struct Matrix {
   let rows: Int, columns: Int
   var grid: [PairsButton]
   
-  init(rows: Int, columns: Int, image: UIImage) {
+  init(rows: Int, columns: Int/*, image: UIImage*/) {
     self.rows = rows
     self.columns = columns
     grid = Array (repeating: PairsButton(), count: rows * columns)
     for (i, _) in grid.enumerated() {
-      let button = PairsButton(image)
+      let button = PairsButton(/*image*/)
       grid[i] = button
     }
   }
