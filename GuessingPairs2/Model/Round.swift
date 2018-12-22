@@ -36,14 +36,15 @@ class Round {
     if (players[0].playerScore > 0) || (players[1].playerScore > 0) {
     // NEW Round initialisation (not FIRST)
       if players[0].playerScore > players[1].playerScore {
-        //TODO: P1 won add cup
+        players[0].unhideNextCup()
       } else if players[0].playerScore < players[1].playerScore {
-        //TODO: P2 won add cup
+        players[1].unhideNextCup()
       } else {
-        //TODO: Draw add 2 cups
+        players[0].unhideNextCup()
+        players[1].unhideNextCup()
       }
     }
-    // geberal for any round initialisation
+    // general for any round initialisation
     self.resetScores()
     labelRound.text = "Round: \(currentRound) of \(maxNumOfRounds)"
   }

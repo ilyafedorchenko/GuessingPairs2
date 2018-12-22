@@ -16,20 +16,12 @@ class Game {
   required init (_ players: [Player], _ maxNumOfRounds: Int) {
     self.players = players
     self.maxNumOfRounds = maxNumOfRounds
-  }
-  
-  
-  
-  func countCups (_ arrayOfCups: [UIImageView]) -> Int {
-    var counter = 0
-    for i in arrayOfCups {
-      if !i.isHidden {
-        counter += 1
+    for player in players {
+      for cup in player.playerCups{
+          cup.isHidden = true
       }
     }
-    return counter
   }
-  
   
   func checkGameOver (_ round: Int) -> Bool {
     if round == maxNumOfRounds {
@@ -39,6 +31,4 @@ class Game {
     }
   }
   
-  
-
 }

@@ -119,11 +119,11 @@ class ViewController: UIViewController {
     button.isEnabled = false
   }
   
-  func deleteGameBoard(){
-    for view in gameBoard.subviews{
-      view.removeFromSuperview()
-    }
-  }
+//  func deleteGameBoard(){
+//    for view in gameBoard.subviews{
+//      view.removeFromSuperview()
+//    }
+//  }
   
   func resetAllButtons(_ buttons: Matrix) {
     for row in 0..<arrayRowsNumber {

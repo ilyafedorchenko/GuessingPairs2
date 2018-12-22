@@ -53,27 +53,6 @@
                                 <rect key="frame" x="53" y="325" width="55" height="30"/>
                                 <state key="normal" title="&lt;- Back"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="rPB-y0-YKh">
-                                <rect key="frame" x="58.5" y="130" width="44" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Dmy-4a-3m7"/>
-                                    <constraint firstAttribute="height" constant="38" id="WDa-SS-Cuc"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="fV2-eC-aJi">
-                                <rect key="frame" x="58.5" y="176" width="44" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="XLF-fq-8QT"/>
-                                    <constraint firstAttribute="height" constant="38" id="tSn-fA-HjW"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="IZf-X9-h6Z">
-                                <rect key="frame" x="58.5" y="222" width="44" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="tJO-Pn-Mo6"/>
-                                    <constraint firstAttribute="width" constant="44" id="z60-PA-jBv"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="5rX-ok-QGc">
                                 <rect key="frame" x="564.5" y="132" width="44" height="38"/>
                                 <constraints>
@@ -120,6 +99,27 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRN-P9-6j4">
                                 <rect key="frame" x="575.5" y="329" width="22" height="22"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="rPB-y0-YKh">
+                                <rect key="frame" x="58.5" y="130" width="44" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Dmy-4a-3m7"/>
+                                    <constraint firstAttribute="height" constant="38" id="WDa-SS-Cuc"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="fV2-eC-aJi">
+                                <rect key="frame" x="58.5" y="176" width="44" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="XLF-fq-8QT"/>
+                                    <constraint firstAttribute="height" constant="38" id="tSn-fA-HjW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cup" translatesAutoresizingMaskIntoConstraints="NO" id="IZf-X9-h6Z">
+                                <rect key="frame" x="58.5" y="222" width="44" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="tJO-Pn-Mo6"/>
+                                    <constraint firstAttribute="width" constant="44" id="z60-PA-jBv"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -159,8 +159,6 @@
                         <outlet property="labelPlayer_2" destination="bAN-6J-F0e" id="n7r-mg-AZb"/>
                         <outlet property="labelPlayer_2Score" destination="IiS-xz-x6F" id="7x4-cl-qIm"/>
                         <outlet property="labelRound" destination="Sy7-33-gI2" id="PRm-m3-VhE"/>
-                        <outletCollection property="player_1_Cups" destination="rPB-y0-YKh" collectionClass="NSMutableArray" id="Mv5-3k-FRY"/>
-                        <outletCollection property="player_2_Cups" destination="mW3-3o-w6X" collectionClass="NSMutableArray" id="HRs-a2-bHO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
