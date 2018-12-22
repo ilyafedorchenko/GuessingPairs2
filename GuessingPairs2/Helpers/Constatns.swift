@@ -21,4 +21,4 @@ let leadingViewOffset: points = 8
 
 let maxNumOfRounds: Int = 3
 
-let timerInterval: Double = 1.0
+let timerInterval: Double = 0.5

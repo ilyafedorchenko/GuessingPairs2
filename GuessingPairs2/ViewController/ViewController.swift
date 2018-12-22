@@ -76,24 +76,34 @@ class ViewController: UIViewController {
       openButton(button)
       currentField = button
       moveIsOver = false
-      if !checkPairs(currentField!, previousField!) {                          // pair is NOT guessed, close pair and switch player
-        closeButtons(currentField!, previousField!, imageBack)
-        round!.switchActivePlayer()
+      
+      //FIXME: add press blocker to avoid speed clicking
+      let _ = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: false) {
+        timer in
+      // start of timer closure
+      
+        if !self.checkPairs(self.currentField!, self.previousField!) {                          // pair is NOT guessed, close pair and switch player
+          self.closeButtons(self.currentField!, self.previousField!, imageBack)
+          self.round!.switchActivePlayer()
       } else {                                                                 // pair is guessed, hide pair and disable, increase score
-        closeButtons(currentField!, previousField!, nil)
-        for (index,_) in players.enumerated() {
-          players[index].activePlayerScorePlus()
+          self.closeButtons(self.currentField!, self.previousField!, nil)
+          for (index,_) in self.players.enumerated() {
+            self.players[index].activePlayerScorePlus()
         }
-        if round!.checkEndOfRound() {                                          // round is over
-          round!.startNewRound()                                               // give a cup to the winner, reset scores
-          resetAllButtons(arrayOfButtons)
+          if self.round!.checkEndOfRound() {                                          // round is over
+            self.round!.startNewRound()                                               // give a cup to the winner, reset scores
+            self.resetAllButtons(self.arrayOfButtons)
 //          deleteGameBoard()
 //          setupGameBoard()                                                     // FIXME: setup new gameboard - add reinitialisation of the board
           // TODO: optional alert
-          if game!.checkGameOver(round!.currentRound) {                        // games is over
-            showGameOverAlert()                                                // show alert with the winner
+            if self.game!.checkGameOver(self.round!.currentRound) {                        // games is over
+              self.showGameOverAlert()                                                // show alert with the winner
           }
         }
+      }
+      
+      
+      // end of timer closure
       }
     }                                                                          // active player can make new move
   }
@@ -190,21 +200,37 @@ class ViewController: UIViewController {
 //  }
   
   //close 2 fields with timerInterval delay settin image to ?, to hide button set image to nil
-  func closeButtons (_ currentField: UIButton, _ previousField: UIButton, _ imageBack: UIImage?) {
+//  func closeButtons (_ currentField: UIButton, _ previousField: UIButton, _ imageBack: UIImage?) {
+//
+//      let _ = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: false) {
+//        timer in
+//        // do stuff X seconds later
+//        if let image = imageBack {
+//          currentField.setImage(image, for: .normal)
+//          currentField.isEnabled = true
+//          previousField.setImage(image, for: .normal)
+//          previousField.isEnabled = true
+//        } else {
+//          currentField.isHidden = true
+//          previousField.isHidden = true
+//        }
+//      }
+//  }
 
-      let _ = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: false) {
-        timer in
-        // do stuff X seconds later
-        if let image = imageBack {
-          currentField.setImage(image, for: .normal)
-          currentField.isEnabled = true
-          previousField.setImage(image, for: .normal)
-          previousField.isEnabled = true
-        } else {
-          currentField.isHidden = true
-          previousField.isHidden = true
-        }
+  func closeButtons (_ currentField: UIButton, _ previousField: UIButton, _ imageBack: UIImage?) {
+    
+    
+      // do stuff X seconds later
+      if let image = imageBack {
+        currentField.setImage(image, for: .normal)
+        currentField.isEnabled = true
+        previousField.setImage(image, for: .normal)
+        previousField.isEnabled = true
+      } else {
+        currentField.isHidden = true
+        previousField.isHidden = true
       }
+
   }
   
   // Iterates through Cups collection and unHides the first hidden
