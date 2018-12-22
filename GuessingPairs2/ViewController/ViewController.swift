@@ -78,32 +78,33 @@ class ViewController: UIViewController {
       moveIsOver = false
       
       //FIXME: add press blocker to avoid speed clicking
+      
       let _ = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: false) {
         timer in
-      // start of timer closure
       
-        if !self.checkPairs(self.currentField!, self.previousField!) {                          // pair is NOT guessed, close pair and switch player
+        // start of timer closure
+      
+        if !self.checkPairs(self.currentField!, self.previousField!) {          // pair is NOT guessed, close pair and switch player
           self.closeButtons(self.currentField!, self.previousField!, imageBack)
           self.round!.switchActivePlayer()
-      } else {                                                                 // pair is guessed, hide pair and disable, increase score
+      } else {                                                                  // pair is guessed, hide pair and disable, increase score
           self.closeButtons(self.currentField!, self.previousField!, nil)
           for (index,_) in self.players.enumerated() {
             self.players[index].activePlayerScorePlus()
         }
-          if self.round!.checkEndOfRound() {                                          // round is over
-            self.round!.startNewRound()                                               // give a cup to the winner, reset scores
+          if self.round!.checkEndOfRound() {                                     // round is over
+            self.round!.startNewRound()                                          // give a cup to the winner, reset scores
             self.resetAllButtons(self.arrayOfButtons)
-//          deleteGameBoard()
-//          setupGameBoard()                                                     // FIXME: setup new gameboard - add reinitialisation of the board
           // TODO: optional alert
-            if self.game!.checkGameOver(self.round!.currentRound) {                        // games is over
-              self.showGameOverAlert()                                                // show alert with the winner
+            if self.game!.checkGameOver(self.round!.currentRound) {              // games is over
+              self.showGameOverAlert()                                           // show alert with the winner
           }
         }
       }
       
       
-      // end of timer closure
+        // end of timer closure
+      
       }
     }                                                                          // active player can make new move
   }
