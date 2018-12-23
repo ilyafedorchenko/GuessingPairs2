@@ -22,12 +22,12 @@ class ViewController: UIViewController {
   @IBOutlet weak var labelRound: UILabel!
   
   var gameBoard = GameBoardView(UIColor.gray, buttonsIndent, leadingViewOffset, arrayColumnsNumber)
-  var arrayOfButtons = Matrix(rows: arrayRowsNumber, columns: arrayColumnsNumber/*, image: imageBack*/)
+  var arrayOfButtons = Matrix(rows: arrayRowsNumber, columns: arrayColumnsNumber)
   
   var currentField: UIButton?
   var previousField: UIButton?
 
-  // FIXME: temporary players are hardcoded
+  // TODO: temporary players are hardcoded, should be passed from Menue
   var players: [Player] = []
   var round: Round?
   var game: Game?
@@ -67,7 +67,6 @@ class ViewController: UIViewController {
   
   
   @objc func buttonTouch (_ button: PairsButton) {
-    //FIXME: add correct round change and cup increment
     if !moveIsOver {                                                           // move is NOT over, open next Field
       openButton(button)
       previousField = button
@@ -77,7 +76,7 @@ class ViewController: UIViewController {
       currentField = button
       moveIsOver = false
       
-      //FIXME: add press blocker to avoid speed clicking
+      //TODO: add press blocker to avoid speed clicking
       
       let _ = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: false) {
         timer in
@@ -97,11 +96,14 @@ class ViewController: UIViewController {
             self.resetAllButtons(self.arrayOfButtons)                            // reset all buttons, shuffle
           // TODO: optional alert
             if self.game!.checkGameOver(self.round!.currentRound) {              // games is over
-              // TODO: Add check winner - see Game
-              self.showGameOverAlert()                                           // show alert with the winner
+              if let winner = self.game!.getPlayerWinner() {
+                self.showGameOverAlert(winner)                                   // show alert with the winner
+              } else {
+                self.showGameOverAlert(nil)
+              }
+            }
           }
         }
-      }
       
         // end of timer closure
       
@@ -159,38 +161,30 @@ class ViewController: UIViewController {
   }
 
   //Alert function for game over
-  func showGameOverAlert() {
+  func showGameOverAlert(_ player: Player?) {
     
-    //TODO: add message for each player
+    labelRound.text = ""
     
+    let message: String
     
-    
-    let message = "Player X wins! /nGame over."
-    
-//    if countCups(arrayOfP1Cups) > countCups(arrayOfP2Cups) {
-//      //P1 won
-//      message = "Game over!\nPlayer 1 wins!"
-//    } else if countCups(arrayOfP1Cups) < countCups(arrayOfP2Cups) {
-//      //P2 won
-//      message = "Game over!\nPlayer 2 wins!"
-//    } else {
-//      // Draw
-//      message = "Game over!\nDraw!"
-//    }
+    if let player = player {
+      message = "\(player.name) wins!\nGame over."
+    } else {
+      message = "Draw!\nGame over."
+    }
     
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let action = UIAlertAction (title: "OK", style: .default, handler: {
+    let action = UIAlertAction (title: "Restart", style: .default, handler: {
       action in
-//      self.startNewRound(startNewGame: true)
+        self.round!.currentRound = 0
+        self.setupGameBoard()
+        self.game!.hideCups()
     })
     alert.addAction(action)
     present(alert, animated: true, completion: nil)
   }
   
   func closeButtons (_ currentField: UIButton, _ previousField: UIButton, _ imageBack: UIImage?) {
-    
-    
-      // do stuff X seconds later
       if let image = imageBack {
         currentField.setImage(image, for: .normal)
         currentField.isEnabled = true

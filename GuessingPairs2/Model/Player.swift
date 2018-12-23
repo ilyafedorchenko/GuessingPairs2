@@ -45,4 +45,12 @@ class Player {
     }
     numberOfCups += 1
   }
+  
+  func hideCups() {
+    for cup in playerCups{
+     cup.isHidden = true
+    }
+    numberOfCups = 0
+  }
+  
 }

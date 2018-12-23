@@ -23,21 +23,38 @@ class Game {
     }
   }
   
-  func checkGameOver (_ round: Int) -> Bool {
-    if (round > maxNumOfRounds) {
+  func checkGameOver (_ currentRound: Int) -> Bool {
+ 
+    // Game is over if one player gets overwelming number of cups or rounds are over
+    
+    for player in players {
+      if player.numberOfCups == Int(maxNumOfRounds/2) + maxNumOfRounds%2 {return true}
+    }
+    
+    if (currentRound > maxNumOfRounds) {
       return true
     } else {
       return false
     }
   }
   
-  // FIXME: check how it works
-  func playerWinner() -> Player? {
-    for player in players {
-      if player.numberOfCups == Int(round(Double(maxNumOfRounds/2))) {return player}
+  func getPlayerWinner() -> Player? {
+    
+    // Get player that has max Cups or Nil
+    
+    if players[0].numberOfCups > players[1].numberOfCups {
+      return players[0]
+    } else if players[0].numberOfCups < players[1].numberOfCups {
+      return players[1]
+    } else {
+      return nil
     }
-    let winner = players.max {a, b in a.numberOfCups < b.numberOfCups}
-    return winner
+  }
+  
+  func hideCups() {
+    for player in players {
+      player.hideCups()
+    }
   }
   
 }
