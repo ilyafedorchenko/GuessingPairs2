@@ -57,7 +57,7 @@ class ViewController: UIViewController {
       )
     ]
     game = Game(players, maxNumOfRounds)
-    round = Round(round: 1, players, labelRound, maxScoreSum: arrayOfPairs.count/2)
+    round = Round(players, labelRound, maxScoreSum: arrayOfPairs.count/2)
     self.view.addSubview(gameBoard)
     gameBoard.setupConstraints()
     
@@ -89,19 +89,19 @@ class ViewController: UIViewController {
           self.round!.switchActivePlayer()
       } else {                                                                  // pair is guessed, hide pair and disable, increase score
           self.closeButtons(self.currentField!, self.previousField!, nil)
-          for (index,_) in self.players.enumerated() {
-            self.players[index].activePlayerScorePlus()
+          for player in self.players {
+            player.activePlayerScorePlus()
         }
           if self.round!.checkEndOfRound() {                                     // round is over
             self.round!.startNewRound()                                          // give a cup to the winner, reset scores
-            self.resetAllButtons(self.arrayOfButtons)
+            self.resetAllButtons(self.arrayOfButtons)                            // reset all buttons, shuffle
           // TODO: optional alert
             if self.game!.checkGameOver(self.round!.currentRound) {              // games is over
+              // TODO: Add check winner - see Game
               self.showGameOverAlert()                                           // show alert with the winner
           }
         }
       }
-      
       
         // end of timer closure
       
@@ -119,12 +119,6 @@ class ViewController: UIViewController {
     button.isEnabled = false
   }
   
-//  func deleteGameBoard(){
-//    for view in gameBoard.subviews{
-//      view.removeFromSuperview()
-//    }
-//  }
-  
   func resetAllButtons(_ buttons: Matrix) {
     for row in 0..<arrayRowsNumber {
       for column in 0..<arrayColumnsNumber {
@@ -133,6 +127,7 @@ class ViewController: UIViewController {
         buttons[row,column].setImage(imageBack, for: .normal)
       }
     }
+    arrayOfPairs.shuffle()
   }
   
   func setupGameBoard() {
@@ -167,7 +162,10 @@ class ViewController: UIViewController {
   func showGameOverAlert() {
     
     //TODO: add message for each player
-    let message = "Game over!"
+    
+    
+    
+    let message = "Player X wins! /nGame over."
     
 //    if countCups(arrayOfP1Cups) > countCups(arrayOfP2Cups) {
 //      //P1 won
@@ -189,35 +187,6 @@ class ViewController: UIViewController {
     present(alert, animated: true, completion: nil)
   }
   
-  //func for updating labels + debugging
-//  func updateLabels(){
-//    labelRoundOver.text=String(moveOver)                                // DEBUG----------------------
-//    //        labelTotalScore.text=String(totalScore)                   // DEBUG----------------------
-//    labelNumberOfPairsRevealed.text=String(numberOfPairsRevealed)       // DEBUG----------------------
-//    labelP1Score.text=String(playerScore[0])
-//    labelP2Score.text=String(playerScore[1])
-//    labelActivePlayer.text=String(activePlayer)
-//    labelActiveRound.text="\(String(activeRound))/\(String(roundsMax))"
-//  }
-  
-  //close 2 fields with timerInterval delay settin image to ?, to hide button set image to nil
-//  func closeButtons (_ currentField: UIButton, _ previousField: UIButton, _ imageBack: UIImage?) {
-//
-//      let _ = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: false) {
-//        timer in
-//        // do stuff X seconds later
-//        if let image = imageBack {
-//          currentField.setImage(image, for: .normal)
-//          currentField.isEnabled = true
-//          previousField.setImage(image, for: .normal)
-//          previousField.isEnabled = true
-//        } else {
-//          currentField.isHidden = true
-//          previousField.isHidden = true
-//        }
-//      }
-//  }
-
   func closeButtons (_ currentField: UIButton, _ previousField: UIButton, _ imageBack: UIImage?) {
     
     

@@ -24,11 +24,20 @@ class Game {
   }
   
   func checkGameOver (_ round: Int) -> Bool {
-    if round == maxNumOfRounds {
+    if (round > maxNumOfRounds) {
       return true
     } else {
       return false
     }
+  }
+  
+  // FIXME: check how it works
+  func playerWinner() -> Player? {
+    for player in players {
+      if player.numberOfCups == Int(round(Double(maxNumOfRounds/2))) {return player}
+    }
+    let winner = players.max {a, b in a.numberOfCups < b.numberOfCups}
+    return winner
   }
   
 }

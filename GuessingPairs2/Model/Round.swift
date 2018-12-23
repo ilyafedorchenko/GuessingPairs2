@@ -10,7 +10,7 @@ import UIKit
 
 class Round {
   
-  var currentRound: Int
+  var currentRound: Int = 0
   var moveIsOver: Bool = false
   var previousField: UIButton? = nil
   var currentField: UIButton? = nil
@@ -19,9 +19,8 @@ class Round {
   var maxScoreSum: Int
   
   
-  required init(round: Int, _ players: [Player], _ labelRound: UILabel, maxScoreSum: Int) {
-    
-    self.currentRound = round
+  required init(_ players: [Player], _ labelRound: UILabel, maxScoreSum: Int) {
+
     self.players = players
     self.labelRound = labelRound
     self.maxScoreSum = maxScoreSum
@@ -46,6 +45,7 @@ class Round {
     }
     // general for any round initialisation
     self.resetScores()
+    currentRound += 1
     labelRound.text = "Round: \(currentRound) of \(maxNumOfRounds)"
   }
   

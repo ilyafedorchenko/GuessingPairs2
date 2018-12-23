@@ -159,6 +159,12 @@
                         <outlet property="labelPlayer_2" destination="bAN-6J-F0e" id="n7r-mg-AZb"/>
                         <outlet property="labelPlayer_2Score" destination="IiS-xz-x6F" id="7x4-cl-qIm"/>
                         <outlet property="labelRound" destination="Sy7-33-gI2" id="PRm-m3-VhE"/>
+                        <outletCollection property="player_1_Cups" destination="rPB-y0-YKh" collectionClass="NSMutableArray" id="I9G-Kf-LqC"/>
+                        <outletCollection property="player_1_Cups" destination="fV2-eC-aJi" collectionClass="NSMutableArray" id="13I-0d-Iqu"/>
+                        <outletCollection property="player_1_Cups" destination="IZf-X9-h6Z" collectionClass="NSMutableArray" id="E6c-Mz-ekC"/>
+                        <outletCollection property="player_2_Cups" destination="5rX-ok-QGc" collectionClass="NSMutableArray" id="S9R-j6-nat"/>
+                        <outletCollection property="player_2_Cups" destination="mW3-3o-w6X" collectionClass="NSMutableArray" id="bmT-Yb-k2E"/>
+                        <outletCollection property="player_2_Cups" destination="PT7-n7-tb0" collectionClass="NSMutableArray" id="gKa-kI-4lg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

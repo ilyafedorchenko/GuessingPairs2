@@ -19,6 +19,6 @@ let arrayRowsNumber: Int = 4
 let buttonsIndent: points = 8
 let leadingViewOffset: points = 8
 
-let maxNumOfRounds: Int = 3
+let maxNumOfRounds: Int = 5
 
 let timerInterval: Double = 0.5
