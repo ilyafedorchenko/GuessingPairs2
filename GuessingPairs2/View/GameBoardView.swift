@@ -31,7 +31,7 @@ class GameBoardView: UIView {
   var buttonSize: Size {
     
     let maxSize = superview!.frame.maxY - (leadingOffset * 2)
-    let buttonSize = ((maxSize - indent) / CGFloat(columnsNumber)) - leadingOffset
+    let buttonSize = ((maxSize - indent) / CGFloat(columnsNumber))
     return Size.init(width: buttonSize, height: buttonSize)
 
   }
@@ -41,7 +41,8 @@ class GameBoardView: UIView {
     let maxSize = superview!.frame.maxY - (leadingOffset * 2)
     self.heightAnchor.constraint(equalToConstant: maxSize).isActive = true
     self.widthAnchor.constraint(equalToConstant: maxSize).isActive = true
-    self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: CGFloat(leadingOffset)).isActive = true
+//    self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: CGFloat(leadingOffset)).isActive = true
+    self.centerYAnchor.constraint(equalTo: superview!.centerYAnchor).isActive = true
     self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
   
   }

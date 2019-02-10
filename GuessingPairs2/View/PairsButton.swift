@@ -15,6 +15,8 @@ class PairsButton: UIButton {
     self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.fill
     self.contentVerticalAlignment = UIControl.ContentVerticalAlignment.fill
     self.translatesAutoresizingMaskIntoConstraints = false
+    self.isOpaque = true
+//    self.setImage(imageBackPressed, for: .highlighted)
   }
   
   required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
