@@ -16,6 +16,9 @@ class ViewController: UIViewController {
   @IBOutlet var player_2_Cups: [UIImageView]!
   @IBOutlet weak var blueBackView: UIImageView!
   
+  @IBOutlet weak var rightPlayerImage: UIImageView!
+  @IBOutlet weak var leftPlayerImage: UIImageView!
+  
   @IBOutlet weak var labelPlayer_1: UILabel!
   @IBOutlet weak var labelPlayer_2: UILabel!
   @IBOutlet weak var labelPlayer_1Score: UILabel!
@@ -41,18 +44,20 @@ class ViewController: UIViewController {
   
     players = [
       Player.init(
-        name: "Father",
+        name: "Илья",
         playerActiveTurn: true,
         playerScore: 0,
         labelPlayer: labelPlayer_1,
+        playerImage: leftPlayerImage!,
         labelPlayerScore: labelPlayer_1Score,
         playerCups: player_1_Cups
       ),
       Player.init(
-        name: "Varya",
+        name: "Даша",
         playerActiveTurn: false,
         playerScore: 0,
         labelPlayer: labelPlayer_2,
+        playerImage: rightPlayerImage!,
         labelPlayerScore: labelPlayer_2Score,
         playerCups: player_2_Cups
       )
@@ -133,6 +138,8 @@ class ViewController: UIViewController {
         buttons[row,column].isEnabled = true
         buttons[row,column].isHidden = false
         buttons[row,column].setBackgroundImage(imageBack, for: .normal)
+        buttons[row,column].setImage(nil, for: .normal)
+        
       }
     }
     arrayOfPairs.shuffle()
@@ -158,13 +165,13 @@ class ViewController: UIViewController {
         button.setBackgroundImage(imageBackPressed, for: .highlighted)
       }
     }
-    for (index, _) in players.enumerated() {
-      if players[index].playerActiveTurn {
-        players[index].labelPlayer.backgroundColor = UIColor.red
-      } else {
-        players[index].labelPlayer.backgroundColor = UIColor.gray
-      }
-    }
+//    for (index, _) in players.enumerated() {
+//      if players[index].playerActiveTurn {
+//        //players[index].labelPlayer.backgroundColor = UIColor.red
+//      } else {
+//        players[index].labelPlayer.backgroundColor = UIColor.gray
+//      }
+//    }
   }
 
   //Alert function for game over

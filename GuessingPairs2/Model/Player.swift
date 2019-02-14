@@ -15,15 +15,17 @@ class Player {
   var playerActiveTurn: Bool
   var playerScore: Int
   var labelPlayer: UILabel
+  var playerImage: UIImageView
   var labelPlayerScore: UILabel
   var playerCups: [UIImageView]
   var numberOfCups = 0
   
- required init(name: String, playerActiveTurn: Bool, playerScore: Int, labelPlayer: UILabel, labelPlayerScore: UILabel, playerCups: [UIImageView]) {
+  required init(name: String, playerActiveTurn: Bool, playerScore: Int, labelPlayer: UILabel, playerImage: UIImageView, labelPlayerScore: UILabel, playerCups: [UIImageView]) {
     self.name = name
     self.playerActiveTurn = playerActiveTurn
     self.playerScore = playerScore
     self.labelPlayer = labelPlayer
+    self.playerImage = playerImage
     self.labelPlayerScore = labelPlayerScore
     self.playerCups = playerCups
     self.labelPlayer.text = name

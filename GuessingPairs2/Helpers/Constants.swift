@@ -20,7 +20,7 @@ let cardImageScaleMultiplier = 0.8
 let arrayColumnsNumber: Int = 4
 let arrayRowsNumber: Int = 4
 let buttonsIndent: points = 0
-let leadingViewOffset: points = 40
+let leadingViewOffset: points = 50
 
 let maxNumOfRounds: Int = 5
 

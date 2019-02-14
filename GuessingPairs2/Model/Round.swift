@@ -55,10 +55,11 @@ class Round {
     for (index, _) in players.enumerated() {
       players[index].playerActiveTurn.toggle()
       if players[index].playerActiveTurn {
-        players[index].labelPlayer.backgroundColor = UIColor.red
+        players[index].playerImage.image = UIImage(named: "leftPlayerSelected")
       } else {
-        players[index].labelPlayer.backgroundColor = UIColor.gray
+        players[index].playerImage.image = UIImage(named: "leftPlayer")
       }
+      //TODO: change code to use left and right images
     }
   }
   
